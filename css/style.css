@@ -1,0 +1,439 @@
+/* Chin Spin Adventures — shared site styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap');
+
+:root {
+  --gold: #f2a93b;
+  --gold-dark: #d98c1f;
+  --sunset-orange: #e8752c;
+  --dusk-purple: #4b3f6b;
+  --forest-green: #3a5a40;
+  --forest-green-dark: #2b4330;
+  --wood-brown: #6b4a30;
+  --wood-brown-dark: #4a3320;
+  --cream: #fdf6e9;
+  --cream-dark: #f5e6c8;
+  --ink: #2e2718;
+
+  --font-display: 'Fredoka', sans-serif;
+  --font-body: 'Nunito', sans-serif;
+
+  --radius: 16px;
+  --shadow-soft: 0 8px 24px rgba(74, 51, 32, 0.15);
+  --shadow-lift: 0 14px 34px rgba(74, 51, 32, 0.22);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  margin: 0 0 0.5em;
+  color: var(--forest-green-dark);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Header / Nav ---------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--cream);
+  border-bottom: 3px solid var(--wood-brown);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--forest-green-dark);
+}
+
+.site-logo img {
+  height: 48px;
+  width: auto;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.site-nav a {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.05rem;
+  padding: 8px 18px;
+  border-radius: 999px;
+  color: var(--wood-brown-dark);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 2px solid var(--wood-brown);
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.nav-toggle span,
+.nav-toggle::before,
+.nav-toggle::after {
+  content: "";
+  display: block;
+  width: 22px;
+  height: 3px;
+  background: var(--wood-brown-dark);
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+@media (max-width: 720px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--cream);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    border-bottom: 3px solid var(--wood-brown);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+
+  .site-nav.open {
+    max-height: 300px;
+  }
+
+  .site-nav a {
+    border-radius: 0;
+    padding: 14px 24px;
+    border-top: 1px solid var(--cream-dark);
+  }
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+}
+
+.hero img {
+  width: 100%;
+  height: clamp(220px, 42vw, 520px);
+  object-fit: cover;
+  object-position: center top;
+}
+
+.hero-caption {
+  text-align: center;
+  padding: 28px 24px 8px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--gold), var(--gold-dark));
+  color: var(--ink);
+  box-shadow: var(--shadow-soft);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lift);
+}
+
+.btn--outline {
+  background: transparent;
+  border: 2px solid var(--forest-green);
+  color: var(--forest-green-dark);
+  box-shadow: none;
+}
+
+.btn--outline:hover {
+  background: var(--forest-green);
+  color: var(--cream);
+}
+
+/* ---------- Sections ---------- */
+
+.section {
+  padding: 64px 0;
+}
+
+.section--alt {
+  background: var(--cream-dark);
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.section-subtitle {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 40px;
+  color: var(--wood-brown-dark);
+}
+
+.cta-row {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
+/* ---------- Intro / meet the girls ---------- */
+
+.meet-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.meet-grid img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+@media (max-width: 800px) {
+  .meet-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pups-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.pup-card {
+  background: var(--cream);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+  border: 2px solid var(--cream-dark);
+}
+
+.pup-card img {
+  border-radius: 12px;
+  margin-bottom: 14px;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .pups-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Video feature (Vimeo) ---------- */
+
+.video-feature {
+  display: flex;
+  justify-content: center;
+}
+
+.video-feature__embed {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 9 / 16;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  background: #000;
+}
+
+.video-feature__embed iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.vimeo-end-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 15, 8, 0.94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.vimeo-end-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.vimeo-replay-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: transparent;
+  border: 2px solid var(--cream);
+  border-radius: 999px;
+  color: var(--cream);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.vimeo-replay-btn:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--ink);
+}
+
+/* ---------- Social ---------- */
+
+.social-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.social-pill {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 10px 24px;
+  border-radius: 999px;
+  border: 2px solid var(--forest-green);
+  color: var(--forest-green-dark);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.social-pill:hover {
+  background: var(--forest-green);
+  color: var(--cream);
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.footer-social a {
+  font-family: var(--font-display);
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.footer-social a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  background: var(--forest-green-dark);
+  color: var(--cream);
+  padding: 36px 24px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.site-footer a {
+  text-decoration: underline;
+}
+
+.site-footer .footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  font-family: var(--font-display);
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | Chin Spin Adventures</title>
+<meta name="description" content="Photo album of Zora and Pumpkin, two Japanese Chin pups. Click any photo for a bigger look.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/gallery.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="site-logo">
+      <img src="images/Chin_Spin_Adventures_Logo_72dpi_500x500_alpha_v101.png" alt="Chin Spin Adventures logo">
+      Chin Spin Adventures
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation"></button>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="shop.html">Shop</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section" style="padding-bottom:0;">
+  <div class="container">
+    <h1 class="section-title">The Photo Album</h1>
+    <p class="section-subtitle">
+      Every adventure, nap, and mischievous look from Zora and Pumpkin.
+      Click any photo for a closer look.
+    </p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:24px;">
+  <div class="container">
+    <div class="photo-wall" id="photoWall"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-nav">
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="shop.html">Shop</a>
+  </div>
+  <p>&copy; <span id="year"></span> Chin Spin Adventures. All photos of Zora &amp; Pumpkin used with tail-wagging approval.</p>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/gallery-data.js"></script>
+<script src="js/lightbox.js"></script>
+<script src="js/gallery.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

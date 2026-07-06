@@ -1,0 +1,71 @@
+/* Shop / coloring book collections */
+
+.collection {
+  margin-bottom: 56px;
+}
+
+.collection__title {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+}
+
+.collection__desc {
+  max-width: 700px;
+  color: var(--wood-brown-dark);
+  margin-bottom: 28px;
+}
+
+.collection__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.book-card {
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  border: 2px solid var(--cream-dark);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+}
+
+.book-card__image img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+}
+
+.book-card__info {
+  padding: 14px 16px 18px;
+  text-align: center;
+}
+
+.book-card__title {
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+}
+
+.book-card__buy {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--ink);
+  transition: background 0.15s ease;
+}
+
+.book-card__buy:hover {
+  background: var(--gold-dark);
+}
