@@ -3,11 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gallery | Chin Spin Adventures</title>
-<meta name="description" content="Photo album of Zora and Pumpkin, two Japanese Chin pups. Click any photo for a bigger look.">
+<title>Donate | Chin Spin Adventures</title>
+<meta name="description" content="Support Zora and Pumpkin's treats, vet visits, and grooming with a donation on Buy Me a Coffee.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/gallery.css">
 </head>
 <body>
 
@@ -20,26 +19,53 @@
     <button class="nav-toggle" aria-label="Toggle navigation"></button>
     <nav class="site-nav">
       <a href="index.html">Home</a>
-      <a href="gallery.html" class="active">Gallery</a>
+      <a href="gallery.html">Gallery</a>
       <a href="shop.html">Shop</a>
-      <a href="donate.html">Donate</a>
+      <a href="donate.html" class="active">Donate</a>
     </nav>
   </div>
 </header>
 
 <section class="section" style="padding-bottom:0;">
   <div class="container">
-    <h1 class="section-title">The Photo Album</h1>
+    <h1 class="section-title">Support the Girls</h1>
     <p class="section-subtitle">
-      Every adventure, nap, and mischievous look from Zora and Pumpkin.
-      Click any photo for a closer look.
+      Every video and photo of Zora and Pumpkin comes with real costs behind
+      the scenes. If you'd like to help keep these two goofballs happy and
+      healthy, here's how.
     </p>
   </div>
 </section>
 
 <section class="section" style="padding-top:24px;">
   <div class="container">
-    <div class="photo-wall" id="photoWall"></div>
+
+    <div class="reasons-grid">
+      <div class="reason-card">
+        <div class="reason-card__icon">🦴</div>
+        <h3>Treats &amp; Toys</h3>
+        <p>Keeping two spoiled Chins in snacks and new things to chew on.</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-card__icon">🩺</div>
+        <h3>Vet Visits &amp; Checkups</h3>
+        <p>Yearly checkups and the occasional unplanned trip to the vet.</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-card__icon">🐛</div>
+        <h3>Flea &amp; Tick Prevention</h3>
+        <p>Monthly medicine to keep the girls protected year-round.</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-card__icon">✂️</div>
+        <h3>Grooming &amp; Gland Care</h3>
+        <p>Haircuts and gland cleanings to keep them comfortable.</p>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a href="https://buymeacoffee.com/wearepumpkg" target="_blank" rel="noopener" class="btn">Buy the Girls a Coffee</a>
+    </div>
   </div>
 </section>
 
@@ -61,9 +87,6 @@
 </footer>
 
 <script src="js/main.js"></script>
-<script src="js/gallery-data.js"></script>
-<script src="js/lightbox.js"></script>
-<script src="js/gallery.js"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
