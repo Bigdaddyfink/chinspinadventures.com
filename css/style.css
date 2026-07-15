@@ -176,11 +176,14 @@ h1, h2, h3, h4 {
   position: relative;
 }
 
-.hero img {
+.hero img,
+.hero video {
   width: 100%;
   height: clamp(220px, 42vw, 520px);
   object-fit: cover;
   object-position: center top;
+  display: block;
+  background: #000;
 }
 
 .hero-caption {
